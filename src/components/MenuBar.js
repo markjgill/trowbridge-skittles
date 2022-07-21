@@ -27,7 +27,7 @@ const MenuBar = () => {
         }
     ];
 
-    return <Menu model={items} />;
+    return <Menu className="border-none" model={items} />;
 };
 
 export default MenuBar;

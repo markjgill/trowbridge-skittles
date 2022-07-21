@@ -12,12 +12,10 @@ const Home = () => {
     ];
 
     const itemTemplate = product => {
-        const classes = product.isSevere
-            ? "bg-red-50 border-red-500"
-            : "bg-primary-50 border-primary-500";
+        const classes = product.isSevere ? "bg-red-100 border-red-600" : "border-primary-600";
 
         return (
-            <Card className={`my-2 border-left-3 ${classes}`} subTitle={`${product.date} - ${product.title}`}>
+            <Card className={`my-1 border-left-3 border-bottom-none ${classes}`} subTitle={`${product.date} - ${product.title}`}>
                 {product.message}
             </Card>
         );
