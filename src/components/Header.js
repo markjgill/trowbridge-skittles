@@ -11,9 +11,12 @@ const Header = () => {
     ];
 
     return (
-        <div className="flex mb-4">
+        <div className="flex border-bottom-2 border-primary mb-4">
             <h1 className="flex-auto m-0">Trowbridge Town Skittles League</h1>
-            <SplitButton className="p-button-text" buttonClassName="p-0" label={season} model={seasons} />
+            <div>
+                <span className="font-bold text-primary pr-2">Season:</span>
+                <SplitButton className="p-button-text" buttonClassName="p-0" label={season} model={seasons} />
+            </div>
             <Button className="p-button-text" label="Sign In" />
         </div>
     );
