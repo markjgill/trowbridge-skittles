@@ -11,7 +11,7 @@ const Header = () => {
     ];
 
     return (
-        <div className="flex border-bottom-2 border-primary mb-4">
+        <div className="flex border-bottom-2 border-primary mt-2 mb-4">
             <h1 className="flex-auto m-0">Trowbridge Town Skittles League</h1>
             <div>
                 <span className="font-bold text-primary pr-2">Season:</span>

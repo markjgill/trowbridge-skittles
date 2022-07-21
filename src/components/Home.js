@@ -23,9 +23,16 @@ const Home = () => {
 
     return (
         <>
-            <h2 className="m-0">Latest news</h2>
-            <DataView value={items} itemTemplate={itemTemplate} layout="list" paginator rows={3} />
-        </>    
+            <div class="grid">
+                <div class="col-8">
+                    <h2 className="m-0">Welcome</h2>
+                </div>
+                <div class="col-4">
+                    <h2 className="m-0">Latest news</h2>
+                    <DataView value={items} itemTemplate={itemTemplate} layout="list" paginator rows={3} />
+                </div>
+            </div>
+        </>
     );
 };
 
