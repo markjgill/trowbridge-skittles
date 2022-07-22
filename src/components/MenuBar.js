@@ -9,6 +9,7 @@ const MenuBar = () => {
         { label: "Home", icon: PrimeIcons.HOME, command: e => navigate("/") },
         {
             label: "League",
+            className: "bg-primary-100 border-y-2 border-primary-200",
             items: [
                 { label: "Division 1", command: e => navigate("division/1") },
                 { label: "Division 2", command: e => navigate("division/2") },
@@ -17,6 +18,7 @@ const MenuBar = () => {
         },
         {
             label: "Cups",
+            className: "bg-primary-100 border-y-2 border-primary-200",
             items: [
                 { label: "8-a-side Nomination", command: e => navigate("cups/8-a-side") },
                 { label: "10-a-side Nomination", command: e => navigate("cups/10-a-side") },
@@ -27,7 +29,7 @@ const MenuBar = () => {
         }
     ];
 
-    return <Menu className="border-none" model={items} />;
+    return <Menu className="bg-primary-100 border-none" model={items} />;
 };
 
 export default MenuBar;

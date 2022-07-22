@@ -1,21 +1,24 @@
 import { Card } from "primereact/card";
 import { DataView } from "primereact/dataview";
+import { DateTime } from "luxon";
+
 
 const News = () => {
     const items = [
-        { date: "20230727", title: "Something happened", isSevere: false, message: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!" },
-        { date: "20220727", title: "Something happened", isSevere: true, message: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!" },
-        { date: "20210727", title: "Something happened", isSevere: false, message: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!" },
-        { date: "20200727", title: "Something happened", isSevere: false, message: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!" },
-        { date: "20190727", title: "Something happened", isSevere: true, message: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!" },
-        { date: "20180727", title: "Something happened", isSevere: true, message: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!" }
+        { date: "2023-07-27", title: "Something happened", isSevere: false, message: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!" },
+        { date: "2022-07-27", title: "Something happened", isSevere: true, message: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!" },
+        { date: "2021-07-27", title: "Something happened", isSevere: false, message: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!" },
+        { date: "2020-07-27", title: "Something happened", isSevere: false, message: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!" },
+        { date: "2019-07-27", title: "Something happened", isSevere: true, message: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!" },
+        { date: "2018-07-27", title: "Something happened", isSevere: true, message: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!" }
     ];
 
     const itemTemplate = product => {
         const classes = product.isSevere ? "border-red-600" : "border-primary-600";
+        const date = DateTime.fromISO(product.date).toLocaleString(DateTime.DATE_MED);
 
         return (
-            <Card className={`my-1 border-left-3 border-bottom-none ${classes}`} subTitle={`${product.date} - ${product.title}`}>
+            <Card className={`my-1 border-left-3 border-bottom-none ${classes}`} subTitle={`${date} - ${product.title}`}>
                 {product.message}
             </Card>
         );
