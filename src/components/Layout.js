@@ -1,13 +1,13 @@
 import Header from "./Header"
 import MenuBar from "./MenuBar";
-import Content from "./Content";
+import Page from "./Page";
 
-const Layout = () => 
+const Layout = () =>
     <div className="px-3 pb-3">
         <Header />
         <div className="flex gap-3">
             <div className="flex-none"><MenuBar /></div>
-            <div className="flex-auto"><Content /></div>
+            <div className="flex-auto"><Page /></div>
         </div>
     </div>;
 
