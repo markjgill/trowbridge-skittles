@@ -12,7 +12,7 @@ const News = () => {
     ];
 
     const itemTemplate = product => {
-        const classes = product.isSevere ? "bg-red-100 border-red-600" : "border-primary-600";
+        const classes = product.isSevere ? "border-red-600" : "border-primary-600";
 
         return (
             <Card className={`my-1 border-left-3 border-bottom-none ${classes}`} subTitle={`${product.date} - ${product.title}`}>
