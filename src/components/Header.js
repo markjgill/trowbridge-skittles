@@ -1,13 +1,15 @@
-import { useState } from 'react';
+import { useContext } from "react";
 import { SplitButton } from "primereact/splitbutton";
 import { Button } from "primereact/button";
 
+import SeasonContext from "../context/SeasonContext";
+
 const Header = () => {
-    const [season, setSeason] = useState("2022/23");
+    const [season, setSeason] = useContext(SeasonContext);
 
     const seasons = [
-        { label: "2021/22", command: e => setSeason(e.item.label) },
-        { label: "2022/23", command: e => setSeason(e.item.label) }
+        { label: "2021-22", command: e => setSeason(e.item.label) },
+        { label: "2022-23", command: e => setSeason(e.item.label) }
     ];
 
     return (
