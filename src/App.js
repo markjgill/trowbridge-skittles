@@ -22,7 +22,7 @@ const App = () => {
             <Route path="cups/:cup" element={<Cup />} />
           </Route>
         </Routes>
-    </BrowserRouter>;
+    </BrowserRouter>
   </SeasonContext.Provider>
   );
 };

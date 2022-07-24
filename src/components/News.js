@@ -1,7 +1,6 @@
+import { DateTime } from "luxon";
 import { Card } from "primereact/card";
 import { DataView } from "primereact/dataview";
-import { DateTime } from "luxon";
-
 
 const News = () => {
     const items = [
@@ -14,21 +13,21 @@ const News = () => {
     ];
 
     const itemTemplate = product => {
-        const classes = product.isSevere ? "border-red-600" : "border-primary-600";
+        const classes = product.isSevere ? "border-red-600" : "surface-border";
         const date = DateTime.fromISO(product.date).toLocaleString(DateTime.DATE_MED);
 
         return (
-            <Card className={`my-1 border-left-3 border-bottom-none ${classes}`} subTitle={`${date} - ${product.title}`}>
-                {product.message}
+            <Card className={`col-12 my-1 border-left-3 border-1 ${classes}`} subTitle={`${date} - ${product.title}`}>
+                <div className="`$classes}`">{product.message}</div>
             </Card>
         );
     };
 
     return (
-        <>
+        <div className="min-w-18rem max-w-18rem">
             <h2 className="m-0">Latest news</h2>
-            <DataView value={items} itemTemplate={itemTemplate} layout="list" paginator rows={3} />
-        </>
+            <DataView value={items} itemTemplate={itemTemplate} />
+        </div>
     );
 };
 

@@ -1,14 +1,22 @@
+import { Outlet } from "react-router-dom";
+
+import Footer from "./Footer";
 import Header from "./Header"
 import MenuBar from "./MenuBar";
-import Page from "./Page";
+import News from "./News";
 
 const Layout = () =>
-    <div className="px-3 pb-3">
+    <>
         <Header />
-        <div className="flex gap-3">
-            <div className="flex-none bg-primary-100"><MenuBar /></div>
-            <div className="flex-auto"><Page /></div>
+        <div className="flex gap-3 p-3 border-top-2 border-primary">
+            <div className="flex-auto border-right-2 border-primary">
+                <Outlet />
+            </div>
+            <div className="flex-none">
+                <News />
+            </div>
         </div>
-    </div>;
+        <Footer />
+    </>
 
 export default Layout;

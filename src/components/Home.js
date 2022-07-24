@@ -1,4 +1,5 @@
 import { useContext } from "react";
+
 import SeasonContext from "../context/SeasonContext";
 
 const Home = () => {
